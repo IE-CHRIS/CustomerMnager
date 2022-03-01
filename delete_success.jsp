@@ -13,7 +13,7 @@
         <!-- TODO ｢削除完了｣画面 -->
         <h2>削除完了</h2>
         <table border="1"></table>
-        <button name=""></button>
+        <button name="">検索画面</button>
 
     </div>
 </body>
