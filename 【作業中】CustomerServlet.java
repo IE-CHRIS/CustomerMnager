@@ -295,6 +295,8 @@ public class CustomerServlet extends BaseServlet {
             IOException {
         
         // TODO 未実装→22.03.01_植野作成
+        
+        // 画面処理
         getServletContext().getRequestDispatcher("/WEB-INF/customer/edit.jsp").forward(request, response);
     }
 
@@ -311,9 +313,9 @@ public class CustomerServlet extends BaseServlet {
         
         // TODO 未実装→22.03.01_植野作成
         
-        // リクエスト内の顧客情報を取得とセッション設定
+        // リクエスト内の顧客情報を取得し、セッション設定
         CustomerLogic customerLogic = new CustomerLogic();
-        CustomerBean customerEdit = customerLogic.setCustomerBeanFromRequestToSession(request);
+        customerLogic.setCustomerBeanFromRequestToSession(request);
      	
         // 編集確認画面処理
         getServletContext().getRequestDispatcher("/WEB-INF/customer/edit_confirm.jsp").forward(request, response);
