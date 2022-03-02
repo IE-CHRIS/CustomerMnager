@@ -50,7 +50,7 @@
 
             </table>
 
-            <button onclick="/new_confilm">送信</button>
+            <button name="state" value="new_confirm">送信</button>
             <button onclick="/new">戻る</button>
             <input type="button" value="戻る" onclick="history.back()">
 
@@ -92,10 +92,6 @@ function funcConfirm() {
         alert("メールアドレスを半角英数字で入力してください");
         return false;
     }
-
-
 }
-
-
 </script>
 </html>
