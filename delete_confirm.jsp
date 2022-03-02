@@ -12,7 +12,7 @@
     <div class="main">
 
         <!-- ｢削除確認｣画面 -->
-        <h2>削除完了</h2>
+        <h2>削除確認</h2>
         <form action="CustomerServlet" method="post">
          <table border="1">
             <tr>
@@ -44,8 +44,8 @@
                 <td><%=customer.getEmail()%></td>
             </tr>
         </table>
-
-        <button name="state" value="search">検索画面</button>
+             <button name="state" value="delete">OK</button>
+             <button name="state" value="search">検索画面</button>
         </form>
     </div>
 </body>
