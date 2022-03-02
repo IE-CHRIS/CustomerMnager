@@ -49,7 +49,7 @@
                 <!-- TODO ｢削除｣ボタン -->
                 <td class="center">
                 <form action="CustomerLogic" method="post">
-                <buttom name="state" value="delete">削除</buttom>
+                <buttom name="state" value="delete_confirm">削除</buttom>
                 </form>
                 </td>
                 <%
@@ -64,7 +64,7 @@
             <p>
 
                 <!-- TODO ｢新規登録｣ボタン -->
-                <button name="signUp" value="new">新規登録</button>
+                <button name="state" value="new">新規登録</button>
 
                 <button name="state" value="search">検索条件画面</button>
             </p>
