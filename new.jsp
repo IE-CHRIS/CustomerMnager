@@ -17,7 +17,7 @@
         <!-- TODO ｢新規登録｣画面 -->
 
         <h2>新規登録</h2>
-        <form name="form1" action="CustomerServlet" method="post" onsubmit="return funcConfirm()">>
+        <form name="form1" action="CustomerServlet" method="post" onsubmit="return funcConfirm()">
             <table border="1">
                 <tr>
                     <td class="title">氏名</td>
