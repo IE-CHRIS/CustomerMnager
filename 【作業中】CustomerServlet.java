@@ -241,12 +241,12 @@ public class CustomerServlet extends BaseServlet {
         
         //  顧客情報をDBから取得
         CustomerLogic customerLogic = new CustomerLogic();
-        CustomerBean customer = null;
-        customer = customerLogic.load(intId);
+        CustomerBean customerEdit = null;
+        customerEdit = customerLogic.load(intId);
         
         // Httpsessionインスタンス取得と保存
         HttpSession session = request.getSession();
-        session.setAttribute("customer", customer);
+        session.setAttribute("customerEdit", customerEdit);
         
         // DBから登録後のフォワード先を設定
         getServletContext().getRequestDispatcher("/WEB-INF/customer/delete_confirm.jsp").forward(request, response);
@@ -270,9 +270,11 @@ public class CustomerServlet extends BaseServlet {
         String errMessage = null;
         CustomerBean customerEdit = (CustomerBean) session.getAttribute("customerEdit");
         CustomerLogic customerLogic = new CustomerLogic();
+        
+        // DB削除処理
        	errMessage = customerLogic.delete(customerEdit);
         
-        // DB削除
+        // 使用済みのセッション削除処理
         session.removeAttribute("customerEdit");
         
        	// 成功時及び失敗時の画面処理
