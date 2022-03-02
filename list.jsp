@@ -48,7 +48,7 @@
 
                 <!-- TODO ｢削除｣ボタン -->
                 <td class="center">
-                <form action="CustomerLogic" method="post">
+                <form action="CustomerServlet" method="post">
                 <buttom name="state" value="delete_confirm">削除</buttom>
                 </form>
                 </td>
