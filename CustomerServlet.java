@@ -187,16 +187,23 @@ public class CustomerServlet extends BaseServlet {
      */
     private void procUpdate(HttpServletRequest request, HttpServletResponse response, HttpSession session)
             throws ServletException, IOException {
-        //セッションから顧客情報を取得
-      
-        CustomerLogic customerLogic = (CustomerLogic) session.getAttribute("customerLogic");
-        //更新失敗
-        if(customerLogic == null) {
+        
+       //セッションから顧客情報を取得
+        String errMessage = null;
+        CustomerBean customerUpdate = (CustomerBean) session.getAttribute("customerUpdate");
+        CustomerLogic customerLogic = new CustomerLogic();
+        errMessage = customerLogic.update(customerUpdate);
+        
+        // DB削除
+        session.removeAttribute("customerEdit");
+        
+        // 成功時及び失敗時の画面処理
+        if(errMessage == null){
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/update_success.jsp").forward(request, response);
+        }else{
+            session.setAttribute("errMessage", errMessage);
             getServletContext().getRequestDispatcher("/WEB-INF/customer/update_fail.jsp").forward(request, response);
-       //更新成功
-    }else {
-        getServletContext().getRequestDispatcher("/WEB-INF/customer/update_success.jsp").forward(request, response);
-    }
+        }
     }
     /**
      * 新規登録画面に遷移する
@@ -207,13 +214,7 @@ public class CustomerServlet extends BaseServlet {
      * @param response  HTTPのレスポンス
      */
     private void procNew(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //わかりません。なんとなくでつくりました。
-        CustomerLogic customerLogic = new CustomerLogic();
-        CustomerBean customer = null;
-        
-        HttpSession session = request.getSession();
-        session.setAttribute("customer", customer);
-        
+     
         getServletContext().getRequestDispatcher("/WEB-INF/customer/new.jsp").forward(request, response);
     }
 
@@ -229,15 +230,22 @@ public class CustomerServlet extends BaseServlet {
     private void procAdd(HttpServletRequest request, HttpServletResponse response, HttpSession session)
             throws ServletException, IOException {
         
-        //セッションから顧客情報を取得
-        CustomerLogic customerLogic = (CustomerLogic) session.getAttribute("CustomerLogic");
-       //新規登録失敗
-        if(customerLogic == null) {
+            //セッションから顧客情報を取得
+        String errMessage = null;
+        CustomerBean customerAdd = (CustomerBean) session.getAttribute("customerAdd");
+        CustomerLogic customerLogic = new CustomerLogic();
+        errMessage = customerLogic.add(customerAdd);
+        
+        // DB削除
+        session.removeAttribute("customerAdd");
+        
+        // 成功時及び失敗時の画面処理
+        if(errMessage == null){
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/add_success.jsp").forward(request, response);
+        }else{
+            session.setAttribute("errMessage", errMessage);
             getServletContext().getRequestDispatcher("/WEB-INF/customer/add_fail.jsp").forward(request, response);
-      //新規登録成功
-    }else {
-        getServletContext().getRequestDispatcher("/WEB-INF/customer/add_success.jsp").forward(request, response);
-    }
+        }
        
     }
 
@@ -313,10 +321,10 @@ public class CustomerServlet extends BaseServlet {
      */
     private void procNewConfirm(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException, UnsupportedEncodingException {
-            
-             CustomerLogic customerLogic = (CustomerLogic) request.getAttribute("customerLogic");
-             HttpSession session = request.getSession();
-             session.setAttribute("customerLogic", customerLogic);
-             getServletContext().getRequestDispatcher("/WEB-INF/customer/new_confirm.jsp").forward(request, response);
+                
+            CustomerLogic customerLogic = new CustomerLogic();
+            customerLogic.setCustomerBeanFromRequestToSession(request);
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/new_confirm.jsp").forward(request, response);
     }
+            
 }
