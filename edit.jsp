@@ -79,7 +79,7 @@ function funcConfirm() {
             alert("郵便番号が入力されていません。");
             return false;
     }
-    if (!document.form1.zip.value.match(/^[0-9]+$/)) {
+    if (!document.form1.zip.value.match(/^[0-9-]+$/)) {
         alert("郵便番号を半角数字で入力してください");
         return false;
     }
@@ -91,7 +91,7 @@ function funcConfirm() {
         alert("電話番号が入力されていません。");
             return false;
     }
-    if (!document.form1.tel.value.match(/^[0-9]+$/)) {
+    if (!document.form1.tel.value.match(/^[0-9-]+$/)) {
         alert("電話番号を半角数字で入力してください");
         return false;
     }
