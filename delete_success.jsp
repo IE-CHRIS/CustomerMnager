@@ -12,9 +12,12 @@
 
         <!-- TODO ｢削除完了｣画面 -->
         <h2>削除完了</h2>
-        <table border="1"></table>
-        <button name="state" value="search">検索画面</button>
-
+        <table border="1">
+        <form action="CustomerServlet" method="post">
+            <p>
+            <button name="state" value="search">検索画面</button>
+            </p>
+        </table>
     </div>
 </body>
 </html>
