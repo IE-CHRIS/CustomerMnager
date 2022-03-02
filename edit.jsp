@@ -58,7 +58,7 @@
             </table>
 
             <p>
-                <button onclick="/edit_confilm">送信</button>
+                <button name="state" value="edit_confilm">送信</button>
                 <input type="button" value="戻る" onclick="history.back()">
             </p>
         </form>

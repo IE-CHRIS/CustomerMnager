@@ -48,8 +48,7 @@
             </table>
 
             <button name="state" value="add">送信</button>
-            <button type="submit" onclick='/add_success'>送信</button>
-            <input type="button" value="戻る" onclick="history.back()">
+             <input type="button" value="戻る" onclick="history.back()">
 
         </form>
     </div>
