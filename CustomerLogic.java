@@ -1,5 +1,8 @@
 package customer;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -89,7 +92,8 @@ public class CustomerLogic {
      * リクエスト内の顧客情報をセッションに顧客情報Beanとして設定する
      * @param request 顧客情報を含むリクエスト
      */
-    public void setCustomerBeanFromRequestToSession(HttpServletRequest request) {
+    public void setCustomerBeanFromRequestToSession(HttpServletRequest request)
+        throws IOException, ServletException {
         LogUtil.println(this.getClass().getSimpleName() + "#setCustomerBeanFromRequestToSession");
 
         // TODO 実装 杉田 全く記述 違うかも
