@@ -12,7 +12,7 @@
     <div class="main">
 
         <!-- ｢削除確認｣画面 -->
-        <h2>削除確認</h2>
+        <h2>削除の確認</h2>
         <form action="CustomerServlet" method="post">
          <table border="1">
             <tr>
