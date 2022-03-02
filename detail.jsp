@@ -46,9 +46,8 @@
             <p>
 
                 <!-- TODO ｢編集｣ボタン -->
-                <button name="edit " formaction="CustomerLogic">編集</button>
-                <input type="buttom" value="編集" onclick="CustomerLogic">
-
+                <input type="button" value="編集" onclick="/edit'">
+                
                 <input type="button" value="戻る" onclick="history.back()">
             </p>
         </form>
