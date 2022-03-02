@@ -68,6 +68,7 @@ function funcConfirm() {
             return false;
     }
     if (!document.form1.zip.value.match(/^[0-9-]+$/)) {
+        // /^\d{3}-\d{4}$/
         alert("郵便番号を半角数字で入力してください");
         return false;
     }
@@ -80,6 +81,7 @@ function funcConfirm() {
             return false;
     }
     if (!document.form1.tel.value.match(/^[0-9-]+$/)) {
+            // /^0\d{2,3}-\d{1,4}-\d{4}$/
         alert("電話番号を半角数字で入力してください");
         return false;
     }
@@ -88,6 +90,7 @@ function funcConfirm() {
                 return false;
     }
     if (!document.form1.email.value.match(/^[a-zA-Z0-9]+$/)) {
+        // /^[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-_\.]+$/
         alert("メールアドレスを半角英数字で入力してください");
         return false;
     }
