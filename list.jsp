@@ -49,7 +49,7 @@
                 <!-- TODO ｢削除｣ボタン -->
                 <td class="center">
                 <form action="CustomerServlet" method="post">
-                <buttom name="state" value="delete_confirm">削除</buttom>
+                <button name="state" value="delete_confirm">削除</button>
                 </form>
                 </td>
                 <%
