@@ -19,6 +19,7 @@
         <h2>既存データの編集</h2>
         <form name="form1" action="CustomerServlet" method="post"
             onsubmit="return funcConfirm()">
+                <input type="hidden" name="id" value="<%=customer.getId()%>">
             <table>
                 <tr>
                     <td class="title">氏名</td>
@@ -83,7 +84,7 @@ function funcConfirm() {
         alert("郵便番号を半角数字で入力してください");
         return false;
     }
-    if (document.form1.jusho1.value == "") {
+    if (document.form1.address1.value == "") {
         alert("住所1が入力されていません。");
         return false;
     }
@@ -96,8 +97,8 @@ function funcConfirm() {
         return false;
     }
     if (document.form1.email.value == "") {
-            alert("電話番号が入力されていません。");
-                return false;
+        alert("メールドレスが入力されていません。");
+        return false;
     }
     if (!document.form1.email.value.match(/^[a-zA-Z0-9]+$/)) {
         alert("メールアドレスを半角英数字で入力してください");

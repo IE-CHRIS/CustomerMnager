@@ -50,7 +50,7 @@
 
             </table>
 
-            <button name="state" value="new_confim">送信</button>
+            <button name="state" value="new_confirm">送信</button>
             <input type="button" value="戻る" onclick="history.back()">
 
         </form>
@@ -68,11 +68,10 @@ function funcConfirm() {
             return false;
     }
     if (!document.form1.zip.value.match(/^[0-9-]+$/)) {
-        // /^\d{3}-\d{4}$/
         alert("郵便番号を半角数字で入力してください");
         return false;
     }
-    if (document.form1.jusho1.value == "") {
+    if (document.form1.address1.value == "") {
         alert("住所1が入力されていません。");
         return false;
     }
@@ -81,16 +80,14 @@ function funcConfirm() {
             return false;
     }
     if (!document.form1.tel.value.match(/^[0-9-]+$/)) {
-            // /^0\d{2,3}-\d{1,4}-\d{4}$/
         alert("電話番号を半角数字で入力してください");
         return false;
     }
     if (document.form1.email.value == "") {
-            alert("電話番号が入力されていません。");
+        alert("メールアドレスが入力されていません。");
                 return false;
     }
     if (!document.form1.email.value.match(/^[a-zA-Z0-9]+$/)) {
-        // /^[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-_\.]+$/
         alert("メールアドレスを半角英数字で入力してください");
         return false;
     }
